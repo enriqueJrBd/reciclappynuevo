@@ -1,0 +1,37 @@
+<ion-content [fullscreen]="true">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title class="titulogrande">
+          Reciclappy
+        </ion-title>
+        <ion-buttons slot="start">
+          <ion-button (click)="openMenu()">
+            <ion-icon color="primary" slot="icon-only"  name="menu-sharp"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-buttons class="titulogrande" slot="end">
+          <ion-button [routerLink]="[]" >
+            <ion-icon color="primary" slot="icon-only"  name="person-circle"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <h3 class="subtitulo encabezado" expand="block">Lista de Productos</h3>
+
+    <ion-card-content >
+      <ion-card *ngFor="let producto of productos" >
+      <ion-card-header  >
+        <ion-card-title class="encabezadoi">Tipo: {{producto.tipo}}</ion-card-title>
+        <ion-card-title class="tituloi"> Nombre del Material:  {{producto.nombrematerial}}</ion-card-title>
+        <ion-card-title class="tituloi">Descripcion: {{producto.descripcion}}</ion-card-title>
+        <ion-card-title class="tituloi">Numero de Contacto: {{producto.contacto}}</ion-card-title>
+      <ion-img class="image" src={{producto.foto}}></ion-img>
+      <ion-button (click)="openWhatsapp()" class="icon ion-social-whatsapp"></ion-button> 
+         Whatsapp 
+      </ion-card-header>
+      </ion-card>
+    </ion-card-content>
+    
+
+   
+</ion-content>
